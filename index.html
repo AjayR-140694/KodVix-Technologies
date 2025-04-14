@@ -451,14 +451,10 @@
       alert("Please enter a valid email address.");
       return false;
     }
-
-    // Message
     if (message === "") {
       alert("Please enter your message.");
       return false;
     }
-
-    // If all inputs are valid, then proceed to sendMail()
     sendMail();
 
     return false; 
@@ -470,12 +466,10 @@
         popup.style.display = 'block';
     }
 
-    // Close popup when clicking the close button
     document.querySelector('.close-popup').addEventListener('click', function() {
         document.getElementById('validationPopup').style.display = 'none';
     });
 
-    // Close popup when clicking outside
     window.addEventListener('click', function(event) {
         const popup = document.getElementById('validationPopup');
         if (event.target === popup) {
@@ -498,7 +492,7 @@
                             <div class="social-links">
                                 <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
                                 <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                                <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                                <a href="https://in.linkedin.com/company/kodvix" target="_blank"><i class="ion-logo-linkedin"></i></a>
                                 <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
                                 <a
                                     href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i
@@ -513,7 +507,6 @@
                             <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#team">Team</a></li>
                             <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
                             <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#contact">Contact</a></li>
-<!--                             <li><i class="ion-ios-arrow-forward"></i> <a href="index.html#faq">FAQ</a></li> -->
                         </ul>
                     </div>
 
@@ -524,7 +517,7 @@
                             Gandhi Nagar, Indore<br>
                             Madhya Pradesh <br>
                             <strong>Phone:</strong> +123-456-7890<br>
-                            <strong>Email:</strong> info@KO.com<br>
+                            <strong>Email:</strong> info@KodVix.com<br>
                         </p>
                     </div>
 
@@ -549,7 +542,7 @@
 
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                <div class="col-md-12 copyright" style="color: #fff; font-size: 1.3rem;">
                     Copyright &copy; 2025 Kodvix Technologies. All Rights Reserved.
                 </div>
             </div>
@@ -608,7 +601,6 @@
   </script>
   <script>
     window.onload = function () {
-      // Scroll to the #home section on load
       document.getElementById("home").scrollIntoView({ behavior: "smooth" });
     };
   </script>
