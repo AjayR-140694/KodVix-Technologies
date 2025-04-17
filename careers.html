@@ -62,7 +62,7 @@
     </section>
     <div class="career">
         <div class="career-form">
-            <form id="careerForm" onsubmit="return validateForm(event)">
+            <form id="careerForm">
 
                 <input type="text" id="name" name="name" placeholder="Name" class="career-form-txt" required>
 
@@ -108,37 +108,55 @@
         </div>
     </div>
 
-    <div id="validationPopup" class="validation-popup">
+    <div id="validationPopup" class="popup" style="display: none;">
         <div class="popup-content">
-            <span class="close-popup">&times;</span>
-            <p id="popupMessage"></p>
+          <span class="close-popup">&times;</span>
+          <p id="popupMessage"></p>
         </div>
-    </div>
+      </div>
+      
 
     <style>
-        .validation-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        .popup-content {
-            position: relative;
-            text-align: center;
-        }
-        .close-popup {
-            position: absolute;
-            right: -10px;
-            top: -10px;
-            cursor: pointer;
-            font-size: 20px;
-        }
+       /* Outer container that darkens + blurs background */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px); /* <-- Adds blur to background */
+    background: rgba(0, 0, 0, 0.4); /* dark transparent overlay */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* The centered white popup box */
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    z-index: 1000;
+    font-size: x-large;
+}
+
+/* Close (×) button */
+.close-popup {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
     </style>
 
     <script>
@@ -182,26 +200,23 @@
             return false;
         }
 
-        function showPopup(message) {
-            const popup = document.getElementById('validationPopup');
-            const popupMessage = document.getElementById('popupMessage');
-            popupMessage.textContent = message;
-            popup.style.display = 'block';
-        }
+        function showPopupMessage(message) {
+            const popup = document.getElementById("validationPopup");
+            const messageEl = document.getElementById("popupMessage");
+            messageEl.textContent = message;
+            popup.style.display = "flex";
+          }
+          
+          function closePopup() {
+            document.getElementById("validationPopup").style.display = "none";
+            window.location.href = "/"; // Redirect to homepage
+          }
+        
 
-        // Close popup when clicking the close button
-        document.querySelector('.close-popup').addEventListener('click', function() {
-            document.getElementById('validationPopup').style.display = 'none';
-        });
-
-        // Close popup when clicking outside
-        window.addEventListener('click', function(event) {
-            const popup = document.getElementById('validationPopup');
-            if (event.target === popup) {
-                popup.style.display = 'none';
-            }
-        });
+       
+          
     </script>
+    <script src="js/emailjs.js"></script>
 
     <div class="footer">
         <div class="footer-top">
@@ -288,7 +303,22 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
 
+
+
+
+    <script>   
+         document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("careerForm");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            validateForm(e);
+          });
+        }
+      });
+      </script>
 </body>
 
 </html>
