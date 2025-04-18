@@ -18,7 +18,7 @@ body{
     overflow-x: hidden;
 }
 
-.heading, .clients .section-header h2, .section-head h1, .testimonials .section-header h2, .section-head-1 h4{
+.heading, .clients .section-header h2, .section-head h1, .testimonials .section-header h2, .section-head-1 h4, .Our-team .section-header .heading{
     margin: 2rem;
     padding-top: 6rem;
     display: inline-block;
@@ -27,6 +27,26 @@ body{
     position: relative;
     letter-spacing: .2rem;
 }
+
+
+.Our-team .section-header .heading{
+    margin: 3rem;
+    padding-top: 6rem;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: #00bfff;
+    position: relative;
+    letter-spacing: .2rem;
+}
+.Our-team .section-header .heading::before, .Our-team .section-header .heading::after{
+    content: '';
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-top: .4rem solid #00bfff;
+    border-left: .4rem solid #00bfff;
+}
+
 
 .heading::before, .heading::after, .clients .section-header h2::before, .clients .section-header h2::after, .section-head h1::before, .section-head h1::after, .testimonials .section-header h2::before, .testimonials .section-header h2::after, .section-head-1 h4::before, .section-head-1 h4::after{
     content: '';
@@ -478,7 +498,7 @@ body{
     padding:30px 25px;
     box-shadow: 0 0 25px rgba(0,0,0,0.07);
     border-radius: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     border: 1px solid rgba(0,0,0,0.07);
     -webkit-transition:all 0.7s ease 0s;
     transition:all 0.7 ease 0s;
@@ -731,27 +751,7 @@ body{
     }
 }
 
-.team{
-    min-width: 100%;
-    min-height: 95vh;
-    text-align: center;
-    background-color: #222;
-    position: relative;
-    z-index: 1;
-    padding-top: 40px;
-}
 
-.team .heading{
-    color: #00bfff;
-}
-
-.team .heading::before, .team .heading::after{
-    border-color: #00bfff;
-}
-
-.team1 {
-    padding: 2rem;
-}
 
 .scroll-container {
     display: flex;
@@ -781,7 +781,19 @@ body{
     flex: 0 0 auto; 
 }
 
-.card {
+
+/* Team Section Main Styles */
+.Our-team{
+    min-width: 100%;
+    min-height: 95vh;
+    text-align: center;
+    background-color: #222;
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+  }
+  /* Team Cards */
+  .card {
     height: 35rem;
     width: 22rem;
     background-color: #fff;
@@ -790,87 +802,265 @@ body{
     overflow: hidden;
     -webkit-box-reflect: below 5px linear-gradient(transparent 70%, #0004);
     transition: 0.5s;
-}
-
-.card:hover {
+    margin: 0 auto;
+  }
+  
+  .card:hover {
     transform: translateY(-10px);
     cursor: pointer;
-}
-
-.card .image {
+  }
+  
+  .card .image {
     margin: 1rem 0;
     padding-top: 4rem;
-}
-
-.card .image img {
-    height: 21rem;
-    width: 13rem;
+  }
+  
+  .card .image img {
+    height: 22rem;
+    width: 21rem;
     border-radius: 50%;
     border: .5rem solid #fff;
     box-shadow: 0 0 .5rem rgba(0, 0, 0, .3);
     object-fit: cover;
-}
-
-.card .info h3 {
+  }
+  
+  .card .info h3 {
     font-size: 2rem;
     color: #333;
-}
-
-.card .info span {
+  }
+  
+  .card .info span {
     font-size: 1.8rem;
     color: #00bfff;
-}
-
-.card .info .icons {
+  }
+  
+  .card .info .icons {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
-}
-
-.card .info .icons a {
+  }
+  
+  .card .info .icons a {
     font-size: 2rem;
     color: #333;
     transition: color 0.3s;
-}
-
-.card .info .icons .fa-facebook-f:hover {
+  }
+  
+  .card .info .icons .fa-facebook-f:hover {
     color: #4267B2;
-}
-
-.card .info .icons .fa-twitter:hover {
+  }
+  
+  .card .info .icons .fa-twitter:hover {
     color: #1DA1F2;
-}
-
-.card .info .icons .fa-instagram:hover {
+  }
+  
+  .card .info .icons .fa-instagram:hover {
     color: #C13584;
-}
-
-.card .info .icons .fa-linkedin:hover {
+  }
+  
+  .card .info .icons .fa-linkedin:hover {
     color: #2867B2;
-}
-
-.card::before,
-.card::after {
+  }
+  
+  .card::before,
+  .card::after {
     content: '';
     position: absolute;
     border-radius: 50%;
     height: 13.5rem;
     width: 13.5rem;
     z-index: -1;
-}
-
-.card::before {
+  }
+  
+  .card::before {
     background: #00bfff;
     top: -3rem;
     right: -4rem;
-}
-
-.card::after {
+  }
+  
+  .card::after {
     background: #ccc;
     bottom: -3rem;
     left: -4rem;
-}
+  }
+  
+  /* Owl Carousel Styles */
+  .testimonials-carousel .owl-nav,
+  .testimonials-carousel .owl-dots {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .testimonials-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #dddddd;
+  }
+  
+  .testimonials-carousel .owl-dot.active {
+    background-color: #00bfff;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 1200px) {
+    .card {
+      width: 20rem;
+      height: 33rem;
+    }
+    
+    .card .image img {
+      height: 21rem;
+      width: 20rem;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .section-header .heading {
+      font-size: 3rem;
+    }
+    
+    .card {
+      width: 18rem;
+      height: 31rem;
+    }
+    
+    .card .image img {
+      height: 17rem;
+      width: 11rem;
+    }
+    
+    .card .info h3 {
+      font-size: 1.8rem;
+    }
+    
+    .card .info span {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .section-header .heading {
+      font-size: 2.5rem;
+      padding-top: 5rem;
+    }
+    
+    .section-header .heading::before {
+      top: 4.8rem;
+    }
+    
+    .card {
+      width: 16rem;
+      height: 29rem;
+      margin-bottom: 2rem;
+    }
+    
+    .card .image {
+      padding-top: 3rem;
+    }
+    
+    .card .image img {
+      height: 15rem;
+      width: 10rem;
+      border-width: 0.4rem;
+    }
+    
+    .card::before,
+    .card::after {
+      height: 11rem;
+      width: 11rem;
+    }
+    
+    .card .info h3 {
+      font-size: 1.6rem;
+    }
+    
+    .card .info span {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .mt-100 {
+      margin-top: 60px;
+    }
+    
+    .section-header .heading {
+      font-size: 2.2rem;
+      padding-top: 4rem;
+      margin: 1.5rem;
+    }
+    
+    .section-header .heading::before,
+    .section-header .heading::after {
+      height: 2rem;
+      width: 2rem;
+      border-width: 0.3rem;
+    }
+    
+    .section-header .heading::before {
+      top: 4.8rem;
+      left: -1.5rem;
+    }
+    
+    .section-header .heading::after {
+      right: -1.5rem;
+    }
+    
+    /* For mobile, make the cards center aligned and full width */
+    .owl-carousel .owl-item {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .card {
+      width: 85%;
+      max-width: 28rem;
+      height: auto;
+      min-height: 32rem;
+      margin: 1rem auto 3rem;
+    }
+    
+    .card .image img {
+      height: 24rem;
+      width: 25rem;
+    }
+    
+    .card::before {
+      top: -2rem;
+      right: -3rem;
+    }
+    
+    .card::after {
+      bottom: -2rem;
+      left: -3rem;
+    }
+    
+    /* Adjust reflection for mobile */
+    .card {
+      -webkit-box-reflect: below 2px linear-gradient(transparent 80%, #0003);
+    }
+  }
+  
+  /* Custom Owl Carousel Responsive Adjustments */
+  @media screen and (max-width: 480px) {
+    .testimonials-carousel .owl-nav,
+    .testimonials-carousel .owl-dots {
+      margin-top: 30px;
+    }
+    
+    .testimonials-carousel .owl-dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 3px;
+    }
+  }
+
+
+
 
 
 .contact{
@@ -1199,8 +1389,8 @@ body{
     
     .back-to-top {
         position: fixed;
-        bottom: 2rem;
-        right: 2rem;
+        bottom: 3rem;
+        right: 1rem;
         width: 4rem;
         height: 4rem;
         background: #002e5f;
@@ -1419,9 +1609,7 @@ body{
         font-size: 2rem;
     }
 
-    .team .row{
-        flex-direction: column;
-    }
+   
 
     .contact{
         text-align: center;
@@ -1577,4 +1765,7 @@ body{
 }
 .footer-newsletter {
         margin-bottom: 30px;
+    }
+    .Solutions{
+    padding-left: 15px;
     }
